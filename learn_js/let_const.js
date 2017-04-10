@@ -86,14 +86,14 @@ bar();
   * let不允许在相同的作用域内，重复声明同一个变量
   * result:都报错 Uncaught SyntaxError: Identifier 'a' has already been declared
  */
-function a() {
+/* function a() {
   let a = 10;
   let a = 1;
 }
 function b(){
   let a = 10;
   var a = 1;
-}
+} */
 
 
 
