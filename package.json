@@ -1,0 +1,33 @@
+{
+  "name": "pp-es6",
+  "version": "1.0.0",
+  "description": "good good study day day up",
+  "main": "index.js",
+  "dependencies": {
+    "babel-preset-env": "^1.3.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.3.2"
+  },
+  "scripts": {
+    "build": "babel example.js --watch --out-file compiled.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chpxl2/ES6--Study.git"
+  },
+  "keywords": [
+    "RS6",
+    "babel",
+    "record",
+    "learning"
+  ],
+  "author": "pp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chpxl2/ES6--Study/issues"
+  },
+  "homepage": "https://github.com/chpxl2/ES6--Study#readme"
+}
