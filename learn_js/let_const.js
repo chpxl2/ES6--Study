@@ -164,7 +164,7 @@ function f1(){
   * ES5规定：函数只能在顶层作用域和函数作用域之中声明，不能在块级作用域声明
   * 但是浏览器没有遵守这个规定，所以为了兼容以前的代码，ES6支持在块级作用域中声明函数
   * ES6规定，块级作用域之中，函数声明语句的行为类似于let,在块级作用域之外不可引用。
-  * demo1:在ES5中，result是 I am inside!
+  * 在ES5中，result是 I am inside!
   *       因为if内声明的函数f会被提升到函数头部，实际运行的代码为
           function f() { console.log('I am outside!'); }
           (function () {
@@ -204,3 +204,43 @@ function f() {
   f();
 }());
 
+/*==========================================================
+    const 命令
+==========================================================*/
+/*
+  * const声明一个只读的常量，一旦声明，常量的值就不能改变
+  * 声明的变量不得改变值，这意味着 const一旦声明变量就必须立即初始化，不能留到以后赋值
+  * result1: TypeError: Assignment to constant variable
+  * result2: SyntaxError: Missing initializer in const declaration
+  * const的作用域与let命令相同，只在声明所在的块级作用域内有效
+  * 命令声明的常量也是不提升，同样存在暂时性死区，只能在声明的位置后面使用
+  * const声明的常量，也与let一样不可重复声明
+ */
+const PI = 3.1415;
+PI = 3;
+
+const foo;
+
+/*
+  * const并不是说 变量的值不得改动，而是变量指向的那个内存地址不得改动，
+  * 也就是const只能保证这个指针是固定的，至于他指向的数据结构是不是可变的，就完全不能控制了
+  * 最后一句会报错 typeError: 'foo'/a  is read-only
+  *
+ */
+const foo = {};
+foo.a = 1;
+foo.b = 2;
+foo = {}；
+
+const a = [];
+a.push('hello');
+a.length = 0;
+a = ['Dave'];
+
+/*
+  * 如果想要将对象冻结，应该使用Object.freeze();
+  * 常规模式时，下面一行不起作用；
+  * 严格模式时，该行会报错
+ */
+const foo = Object.freeze({});
+foo.prop = 123;
