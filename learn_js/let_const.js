@@ -219,7 +219,7 @@ function f() {
 const PI = 3.1415;
 PI = 3;
 
-const foo;
+//const foo;
 
 /*
   * const并不是说 变量的值不得改动，而是变量指向的那个内存地址不得改动，
